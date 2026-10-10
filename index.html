@@ -190,6 +190,7 @@ html, body { height: 100%; margin: 0; }
     window.appLock = () => { ls.del(KEY); location.reload(); };
     new Function(app.script)();
   }
+  if ("serviceWorker" in navigator) { try { navigator.serviceWorker.register("sw.js").catch(() => {}); } catch (e) {} }
   (async () => {
     const saved = ls.get(KEY);
     if (saved) {
