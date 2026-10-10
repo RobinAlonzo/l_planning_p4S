@@ -1,5 +1,5 @@
 // Offline cache: the site and its tools are kept on the device. Nothing else is stored here.
-const CACHE = "creneaux-a940e4b46221";
+const CACHE = "creneaux-236a4ef1bb6d";
 const FILES = ["./", "./app.data.js", "./icon-192.png", "./icon-512.png", "./index.html", "./manifest.webmanifest", "./vendor/pdf.min.js", "./vendor/pdf.worker.min.js", "./vendor/tesseract/fra.traineddata.gz", "./vendor/tesseract/tesseract-core-lstm.wasm.js", "./vendor/tesseract/tesseract-core-simd-lstm.wasm.js", "./vendor/tesseract/tesseract.min.js", "./vendor/tesseract/worker.min.js"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
