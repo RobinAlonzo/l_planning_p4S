@@ -1,4 +1,4 @@
-# Créneaux
+# ORION
 
 Outil personnel : convertit un tableau de créneaux en fichier calendrier (.ics), sur ordinateur ou téléphone.
 
