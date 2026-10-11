@@ -143,11 +143,12 @@ textarea { width: 100%; min-height: 140px; font-family: var(--font-code); font-s
 .help ul { margin: 4px 0; padding-left: 1.1em; }
 [hidden] { display: none !important; }
 .privacy-box { display: grid; gap: 10px; }
-@media (max-width: 480px) { 
+
 .gate { min-height: 100%; display: grid; place-items: center; padding-inline: 16px; padding-block: 40px; }
 .gate form { width: min(100%, 380px); display: grid; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; }
 .gate h1 { font-size: 1.5rem; }
-.gate input[type="password"] { width: 100%; font-size: 1.1rem; }
+.gate input[type="password"] { width: 100%; box-sizing: border-box; font: inherit; font-size: 1.05rem; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.gate input[type="password"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .gate .err { font-size: 0.9rem; }
 html, body { height: 100%; margin: 0; }
 :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
