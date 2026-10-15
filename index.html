@@ -104,6 +104,26 @@ details.panel > summary { cursor: pointer; font-weight: 600; display: flex; gap:
 .weekhead, .week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
 .weekhead div { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; padding-inline: 4px; }
 .cal { display: grid; gap: 6px; }
+.duty { display: grid; gap: 12px; }
+.dutyhead { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.bs-wrap { position: fixed; inset: 0; z-index: 50; }
+.bs-dim { position: absolute; inset: 0; background: rgba(0, 0, 0, .55); }
+.bs { position: absolute; left: 0; right: 0; bottom: 0; margin: 0 auto; max-width: 680px; max-height: 85vh; overflow: auto; background: var(--surface); border: 1px solid var(--line); border-bottom: 0; border-radius: 18px 18px 0 0; padding: 10px 14px calc(18px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 8px; box-shadow: 0 -10px 30px rgba(0, 0, 0, .4); }
+.bs-grab { width: 40px; height: 5px; border-radius: 3px; background: var(--line); margin: 0 auto 4px; }
+.bs-x { padding: 4px 10px; border-color: var(--line); color: var(--muted); }
+.vhint { margin: -4px 0 8px; font-size: 0.8rem; color: var(--muted); }
+body.bs-open { overflow: hidden; }
+.dutygrid { display: grid; grid-template-columns: auto repeat(3, minmax(0, 1fr)); gap: 0; font-size: 0.82rem; }
+.dutygrid > div { padding: 5px 6px; border-top: 1px solid var(--line); min-width: 0; display: flex; flex-wrap: wrap; gap: 3px 8px; align-content: start; }
+.dutygrid > .dh { border-top: 0; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; padding-top: 0; }
+.dutygrid > .dl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; padding-left: 0; white-space: nowrap; }
+.dperson { display: inline-flex; gap: 4px; align-items: baseline; min-width: 0; }
+.dperson .chip { display: inline-block; font-size: 0.64rem; padding: 0 3px; min-height: 0; line-height: 1.35; flex: none; }
+.dperson b { font-weight: 600; overflow-wrap: anywhere; }
+.dperson.me b { color: var(--accent); }
+.dnone { color: var(--muted); }
+.bs .vnav b { min-width: 0; font-size: 1rem; }
+.day[data-date] { cursor: pointer; }
 .viewbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin-bottom: 10px; }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
 .seg button { border: 0; border-radius: 0; background: var(--surface); color: var(--muted); padding: 7px 14px; }
@@ -147,6 +167,8 @@ textarea { width: 100%; min-height: 140px; font-family: var(--font-code); font-s
   .weekhead { display: none; }
   .week { grid-template-columns: 1fr; }
   .day.pad, .day.none, .day.out { display: none; }
+  .dutygrid { font-size: 0.78rem; }
+  .dutygrid > div { padding: 5px 3px; gap: 2px 6px; }
   .dname { display: inline; }
   .day { grid-template-columns: 6.5em 1fr; column-gap: 10px; }
   .dhead { flex-direction: column; justify-content: start; }
