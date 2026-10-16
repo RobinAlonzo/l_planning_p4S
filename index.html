@@ -39,7 +39,6 @@ body { background: var(--bg); color: var(--ink); font-family: var(--font-ui); fo
 .wrap { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 40px; display: grid; gap: 16px; }
 h1 { margin: 0; font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
 .titlebar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
-.sub { color: var(--muted); margin: 0; }
 .themebtn { padding: 5px 10px; font-size: 0.85rem; border-color: var(--line); color: var(--muted); }
 .eyebrow, .field label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; }
 .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
@@ -122,20 +121,11 @@ body.bs-open { overflow: hidden; }
 .dperson b { font-weight: 600; overflow-wrap: anywhere; }
 .dperson.me b { color: var(--accent); }
 .dnone { color: var(--muted); }
-.bs .vnav b { min-width: 0; font-size: 1rem; }
+.bs .vnav { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.bs .vnav b { min-width: 0; font-size: 1rem; text-align: center; }
+.bs .vnav button { padding: 4px 12px; font-size: 1.2rem; line-height: 1; }
+.bs .vnav button:disabled { opacity: .35; cursor: default; }
 .day[data-date] { cursor: pointer; }
-.viewbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.seg button { border: 0; border-radius: 0; background: var(--surface); color: var(--muted); padding: 7px 14px; }
-.seg button + button { border-left: 1px solid var(--line); }
-.seg button.on { background: var(--accent); color: var(--accent-ink); }
-.vnav { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.vnav b { font-size: 1.02rem; text-align: center; min-width: 11em; }
-.vnav button { padding: 4px 12px; font-size: 1.2rem; line-height: 1; }
-.vnav button:disabled { opacity: .35; cursor: default; }
-.day.none { background: transparent; border-style: dashed; color: var(--muted); }
-.day.none small { font-size: 0.75rem; }
-.day.out { visibility: hidden; }
 .day { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px; display: grid; gap: 4px; align-content: start; min-width: 0; }
 .day.pad { background: transparent; border-style: dashed; }
 .day.we { background: var(--weekend); }
@@ -166,7 +156,7 @@ textarea { width: 100%; min-height: 140px; font-family: var(--font-code); font-s
 @media (max-width: 720px) {
   .weekhead { display: none; }
   .week { grid-template-columns: 1fr; }
-  .day.pad, .day.none, .day.out { display: none; }
+  .day.pad { display: none; }
   .dutygrid { font-size: 0.78rem; }
   .dutygrid > div { padding: 5px 3px; gap: 2px 6px; }
   .dname { display: inline; }
