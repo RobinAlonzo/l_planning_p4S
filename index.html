@@ -164,6 +164,30 @@ textarea { width: 100%; min-height: 140px; font-family: var(--font-code); font-s
   .dhead { flex-direction: column; justify-content: start; }
 }
 @media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+.affbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 10px; }
+.affbar .vhint { margin: 0; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; background: var(--surface); color: var(--muted); padding: 7px 14px; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on { background: var(--accent); color: var(--accent-ink); }
+
+.month { display: grid; gap: 10px; }
+.mhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.mhead b { font-size: 1.15rem; }
+.mhead button { padding: 4px 14px; font-size: 1.2rem; line-height: 1; }
+.mhead button:disabled { opacity: .35; cursor: default; }
+.mgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; }
+.mdow { text-align: center; font-size: 0.7rem; color: var(--muted); font-weight: 600; padding-bottom: 4px; }
+.mcell { min-width: 0; min-height: 4.6em; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); padding: 3px 2px 4px; display: grid; gap: 2px; align-content: start; justify-items: center; font: inherit; cursor: pointer; }
+.mcell.blank { border-top-color: transparent; cursor: default; }
+.mcell.off { color: var(--muted); opacity: .5; cursor: default; }
+.mnum { font-size: 0.9rem; font-weight: 600; width: 1.9em; height: 1.9em; line-height: 1.9em; border-radius: 50%; text-align: center; font-variant-numeric: tabular-nums; }
+.mcell.we .mnum { color: var(--muted); }
+.mcell.today .mnum { background: var(--accent); color: var(--accent-ink); }
+.mcell.sel .mnum { outline: 2px solid var(--accent); outline-offset: 1px; }
+.mcode { width: 100%; max-width: 3.4em; font-family: var(--font-code); font-weight: 700; font-size: 0.62rem; line-height: 1.35; border-radius: 3px; text-align: center; overflow: hidden; white-space: nowrap; }
+#mday { display: grid; gap: 8px; justify-items: start; }
+#mday .day { width: 100%; max-width: 560px; }
 .gapnote { margin: 10px 0; padding: 8px 12px; border: 1px dashed var(--line); border-radius: 8px; color: var(--muted, inherit); font-size: .9em; text-align: center; }
 
 .help { display: grid; gap: 8px; }
